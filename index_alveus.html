@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alveus | Ingeniería Hídrica para Proyectos que Avanzan</title>
+  <meta name="description" content="Hidrología, hidrogeología, hidráulica y permisos sectoriales para minería, energía e infraestructura. En Alveus entregamos el respaldo técnico que los proyectos necesitan para avanzar.">
+  
+  <!-- Tipografía Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Paleta institucional Alveus basada en el brochure */
+      --primary: #1e3d54;         /* Azul marino corporativo */
+      --primary-dark: #142a3a;    /* Fondo oscuro pie de página / contraste */
+      --accent: #3a7d99;          /* Azul hídrico / río */
+      --accent-hover: #2d647c;    /* Azul intermedio hover */
+      --sand-gold: #c29d68;       /* Acento montaña / dorado cálido */
+      --sand-light: #f7f4ee;      /* Arena muy claro de fondo */
+      --sand-soft: #ede6da;       /* Borde / fondo suave */
+      --text-main: #243038;       /* Texto principal legible */
+      --text-muted: #5e6f7a;      /* Texto secundario */
+      --bg-main: #ffffff;
+      --bg-alt: #f8f6f1;          /* Fondo alternativo acorde al brochure */
+      --border: #e2ddd5;          /* Borde acorde a la paleta cálida */
+      --shadow-sm: 0 1px 3px rgba(30, 61, 84, 0.06);
+      --shadow-md: 0 4px 8px -1px rgba(30, 61, 84, 0.08), 0 2px 4px -2px rgba(30, 61, 84, 0.06);
+      --shadow-lg: 0 12px 20px -3px rgba(30, 61, 84, 0.1), 0 4px 6px -4px rgba(30, 61, 84, 0.05);
+      --transition: all 0.25s ease-in-out;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-main);
+      line-height: 1.6;
+    }
+
+    /* Contenedores y estructura */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    .section-alt {
+      background-color: var(--bg-alt);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .section-badge {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--primary);
+      background-color: var(--sand-soft);
+      padding: 0.35rem 0.9rem;
+      border-radius: 9999px;
+      margin-bottom: 0.85rem;
+    }
+
+    .section-title {
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Botones */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.75rem 1.6rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: var(--transition);
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent);
+    }
+
+    .btn-accent {
+      background-color: var(--sand-gold);
+      color: #ffffff;
+    }
+
+    .btn-accent:hover {
+      background-color: #aa8550;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--primary);
+      border-color: var(--border);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--sand-light);
+      border-color: var(--sand-gold);
+    }
+
+    /* Header y Navegación */
+    header {
+      position: sticky;
+      top: 0;
+      background-color: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 110px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo-img {
+      height: 80px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 600;
+      font-size: 0.92rem;
+      transition: var(--transition);
+    }
+
+    .nav-link:hover {
+      color: var(--accent);
+    }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      color: var(--primary);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 5.5rem 0 4.5rem;
+      background: linear-gradient(180deg, #f7f4ee 0%, #ffffff 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary);
+      background-color: var(--sand-soft);
+      border: 1px solid var(--border);
+      padding: 0.4rem 1.1rem;
+      border-radius: 9999px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: 2.85rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.18;
+      margin-bottom: 1.35rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-title span {
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2.75rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-quote {
+      background-color: #ffffff;
+      border-left: 4px solid var(--sand-gold);
+      padding: 1.35rem 1.75rem;
+      text-align: left;
+      border-radius: 0 10px 10px 0;
+      box-shadow: var(--shadow-sm);
+      font-size: 1rem;
+      color: var(--text-main);
+      border-top: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      line-height: 1.7;
+    }
+
+    /* Métricas / Stats de Experiencia */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .metric-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem 1.25rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .metric-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--sand-gold);
+    }
+
+    .metric-number {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .metric-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Sobre Nosotros / Experiencia */
+    .about-card {
+      background-color: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2.75rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .about-text {
+      font-size: 1.15rem;
+      color: var(--text-main);
+      line-height: 1.85;
+      text-align: center;
+      max-width: 940px;
+      margin: 0 auto;
+    }
+
+    /* Grid de Servicios */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .service-card {
+      background-color: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2rem;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent);
+    }
+
+    .service-num {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--sand-gold);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      background-color: var(--sand-light);
+      color: var(--accent);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      border: 1px solid var(--sand-soft);
+    }
+
+    .service-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .service-desc {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* Franjas de Sectores con Imágenes Locales */
+    .sectors-list {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      margin-top: 4rem;
+    }
+
+    .sector-item {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 2.75rem;
+      align-items: center;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.25rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .sector-item.reverse {
+      grid-template-columns: 1.1fr 1fr;
+    }
+
+    .sector-media {
+      width: 100%;
+      height: 310px;
+      border-radius: 12px;
+      overflow: hidden;
+      background-color: var(--sand-soft);
+    }
+
+    .sector-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .sector-img:hover {
+      transform: scale(1.03);
+    }
+
+    .sector-tag {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--sand-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .sector-heading {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 0.85rem;
+    }
+
+    .sector-text {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* Sección ¿Por qué Alveus? */
+    .why-alveus-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .why-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .why-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .why-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      background-color: var(--sand-soft);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .why-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .why-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Caja de Contactos Directos de Socios */
+    .partners-box {
+      margin-top: 3rem;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #ffffff;
+      border-radius: 14px;
+      padding: 2.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .partners-text h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .partners-text p {
+      color: #d1dce5;
+      font-size: 0.92rem;
+    }
+
+    .partners-list {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .partner-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .partner-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #ffffff;
+    }
+
+    .partner-link {
+      color: #cbd5e1;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .partner-link:hover {
+      color: var(--sand-gold);
+    }
+
+    /* Sección de Contacto */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .contact-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background-color: var(--sand-light);
+      border: 1px solid var(--border);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--sand-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .contact-val {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .contact-val:hover {
+      color: var(--accent);
+    }
+
+    .contact-form {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2.25rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.35rem;
+    }
+
+    .form-input, .form-textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      font-family: inherit;
+      font-size: 0.95rem;
+      background-color: #faf9f6;
+      transition: var(--transition);
+    }
+
+    .form-input:focus, .form-textarea:focus {
+      outline: none;
+      background-color: #ffffff;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(58, 125, 153, 0.15);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary-dark);
+      color: #9fb0bd;
+      padding: 2.5rem 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.9rem;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* WhatsApp Flotante */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 58px;
+      height: 58px;
+      background-color: #25d366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      z-index: 999;
+      color: #ffffff;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+    }
+
+    .whatsapp-tooltip {
+      position: absolute;
+      right: 68px;
+      background-color: var(--primary);
+      color: #ffffff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition);
+      box-shadow: var(--shadow-md);
+    }
+
+    .whatsapp-float:hover .whatsapp-tooltip {
+      opacity: 1;
+    }
+
+    /* Adaptabilidad Responsive */
+    @media (max-width: 992px) {
+      .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .sector-item, .sector-item.reverse {
+        grid-template-columns: 1fr;
+      }
+      .sector-item.reverse .sector-media {
+        order: -1;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .partners-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+      .nav-menu {
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        flex-direction: column;
+        padding: 1.5rem;
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow-md);
+        display: none;
+      }
+      .nav-menu.active {
+        display: flex;
+      }
+      .hero-title {
+        font-size: 2.15rem;
+      }
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. HEADER / NAVEGACIÓN -->
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <img src="Imagenes/Logo.jpg" alt="Alveus - Ingeniería Hídrica" class="logo-img">
+      </a>
+
+      <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#experiencia" class="nav-link">Experiencia</a></li>
+        <li><a href="#soluciones" class="nav-link">Soluciones</a></li>
+        <li><a href="#sectores" class="nav-link">Sectores</a></li>
+        <li><a href="#por-que-alveus" class="nav-link">¿Por qué Alveus?</a></li>
+        <li><a href="#contacto" class="btn btn-primary" style="padding: 0.5rem 1.25rem;">Contactar</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- 2. HERO SECTION -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-badge">Alveus</span>
+          <h1 class="hero-title">Ingeniería hídrica para <span>proyectos que avanzan</span></h1>
+          <p class="hero-subtitle">Hidrología, hidrogeología, hidráulica y permisos sectoriales para minería, energía e infraestructura.</p>
+          
+          <div class="hero-actions">
+            <a href="https://wa.me/56995800837?text=Hola,%20quisiera%20solicitar%20información%20sobre%20los%20servicios%20de%20Alveus" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              Iniciar Consulta por WhatsApp
+            </a>
+            <a href="#soluciones" class="btn btn-outline">Ver Soluciones</a>
+          </div>
+
+          <div class="hero-quote">
+            "En Alveus entregamos el respaldo técnico que los proyectos necesitan para avanzar. Combinamos modelación numérica, ingeniería y conocimiento regulatorio para resolver los desafíos hídricos de cada etapa, desde la línea base hasta la operación."
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. NUESTRA EXPERIENCIA -->
+    <section id="experiencia" class="section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Trayectoria Comprobada</span>
+          <h2 class="section-title">Nuestra Experiencia</h2>
+          <p class="section-subtitle">
+            La experiencia conjunta de nuestros socios combina más de cuatro décadas de trabajo en consultoría especializada y organismos públicos, participando en proyectos de minería, energía e infraestructura mediante soluciones basadas en hidrología, hidrogeología, hidráulica y gestión de recursos hídricos.
+          </p>
+        </div>
+
+        <!-- Métricas del Brochure -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-number">+40 años</div>
+            <div class="metric-title">Trayectoria</div>
+            <div class="metric-desc">De los socios, respaldados por asesores estratégicos.</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-number">+100</div>
+            <div class="metric-title">Proyectos</div>
+            <div class="metric-desc">Desarrollados con éxito por los socios fundadores.</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-number">3 Sectores</div>
+            <div class="metric-title">Especializados</div>
+            <div class="metric-desc">Minería, Energía e Infraestructura pública y privada.</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-number">Chile y Exterior</div>
+            <div class="metric-title">Cobertura</div>
+            <div class="metric-desc">Proyectos desarrollados tanto a nivel nacional como internacional.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. NUESTRAS SOLUCIONES (5 SERVICIOS DEL BROCHURE) -->
+    <section id="soluciones">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Capacidades Técnicas</span>
+          <h2 class="section-title">Nuestras Soluciones</h2>
+          <p class="section-subtitle">Ingeniería y modelación avanzada al servicio de proyectos de alta exigencia técnica y regulatoria.</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- 01 Hidrología -->
+          <div class="service-card">
+            <span class="service-num">01</span>
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Hidrología</h3>
+            <p class="service-desc">Caudales de diseño, análisis de crecidas, balances hídricos y estudios de disponibilidad, incluyendo escenarios de cambio climático.</p>
+          </div>
+
+          <!-- 02 Hidrogeología -->
+          <div class="service-card">
+            <span class="service-num">02</span>
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 6h18M3 12h18M3 18h18"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Hidrogeología</h3>
+            <p class="service-desc">Caracterización de acuíferos, pruebas de bombeo, modelos numéricos de flujo y transporte, estudios de vulnerabilidad de acuífero y evaluación de drenaje y desagüe en faenas.</p>
+          </div>
+
+          <!-- 03 Hidráulica -->
+          <div class="service-card">
+            <span class="service-num">03</span>
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 12h20M2 12l5-5m-5 5 5 5"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Hidráulica</h3>
+            <p class="service-desc">Modelación 1D y 2D, ejes hidráulicos, socavación y diseño de obras de defensa fluvial, desvíos y canales.</p>
+          </div>
+
+          <!-- 04 Permisos Ambientales y Sectoriales -->
+          <div class="service-card">
+            <span class="service-num">04</span>
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Permisos Ambientales y Sectoriales</h3>
+            <p class="service-desc">Antecedentes técnicos para permisos DGA (art. 41, 171 y 294 del Código de Aguas) y PAS hídricos, capítulos de recursos hídricos para DIA/EIA.</p>
+          </div>
+
+          <!-- 05 Gestión de Recursos Hídricos -->
+          <div class="service-card">
+            <span class="service-num">05</span>
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Gestión de Recursos Hídricos</h3>
+            <p class="service-desc">Balances hídricos, planes de seguimiento, gestión de derechos de aprovechamiento y due diligence hídrico a lo largo de todo el ciclo de vida del proyecto.</p>
+          </div>
+        </div>
+
+        <!-- Franjas de Sectores con Imágenes Locales -->
+        <div id="sectores" class="sectors-list">
+          
+          <!-- Franja 1: Minería -->
+          <div class="sector-item">
+            <div class="sector-media">
+              <img src="Imagenes/mineria.jpg" alt="Minería metálica y no metálica" class="sector-img" loading="lazy">
+            </div>
+            <div class="sector-info">
+              <span class="sector-tag">Sector 01</span>
+              <h3 class="sector-heading">Minería</h3>
+              <p class="sector-text">
+                Estudios para minería metálica y no metálica en todas sus etapas: hidrogeología y modelación numérica en faenas y salares, drenaje y desagüe de rajos, hidrología de depósitos de relaves y botaderos, y abastecimiento de agua. Diseñamos obras hidráulicas como desvíos de cauces y canales de contorno, y elaboramos y gestionamos los permisos ambientales y sectoriales asociados.
+              </p>
+            </div>
+          </div>
+
+          <!-- Franja 2: Energía -->
+          <div class="sector-item reverse">
+            <div class="sector-info">
+              <span class="sector-tag">Sector 02</span>
+              <h3 class="sector-heading">Energía</h3>
+              <p class="sector-text">
+                Apoyo en proyectos de generación y transmisión: análisis de crecidas y aluviones, socavación en cruces de cauces y drenaje de plantas. Diseñamos obras hidráulicas según los requerimientos de cada proyecto, y elaboramos y gestionamos los permisos ambientales y sectoriales.
+              </p>
+            </div>
+            <div class="sector-media">
+              <img src="Imagenes/energia.jpg" alt="Generación y transmisión de energía" class="sector-img" loading="lazy">
+            </div>
+          </div>
+
+          <!-- Franja 3: Sector Público e Infraestructura -->
+          <div class="sector-item">
+            <div class="sector-media">
+              <img src="Imagenes/infraestructura.jpg" alt="Infraestructura hídrica y sector público" class="sector-img" loading="lazy">
+            </div>
+            <div class="sector-info">
+              <span class="sector-tag">Sector 03</span>
+              <h3 class="sector-heading">Sector Público e Infraestructura</h3>
+              <p class="sector-text">
+                Estudios para organismos públicos e infraestructura hídrica: evaluación de recursos en cuencas, apoyo técnico a la autoridad, y análisis y diseño de obras hidráulicas como embalses, canales, defensas fluviales y obras de drenaje.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. ¿POR QUÉ ALVEUS? -->
+    <section id="por-que-alveus" class="section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Propuesta de Valor</span>
+          <h2 class="section-title">¿Por qué Alveus?</h2>
+          <p class="section-subtitle">
+            <strong>Visión estratégica, compromiso con su proyecto.</strong><br>
+            Nuestro equipo combina años de consultoría especializada con experiencia directa en organismos públicos. Formulamos estudios y soluciones técnicamente robustos y alineados con los requerimientos regulatorios, lo que se traduce en menos observaciones y proyectos que avanzan.
+          </p>
+        </div>
+
+        <div class="why-alveus-grid">
+          <div class="why-card">
+            <div class="why-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
+            <h3 class="why-title">Experiencia regulatoria</h3>
+            <p class="why-desc">Conocemos los criterios de evaluación de la autoridad de primera mano.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              </svg>
+            </div>
+            <h3 class="why-title">Ingeniería especializada</h3>
+            <p class="why-desc">Hidrología, hidrogeología e hidráulica con modelación avanzada.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+              </svg>
+            </div>
+            <h3 class="why-title">Soluciones integrales</h3>
+            <p class="why-desc">Un solo equipo técnico continuo, desde el estudio base hasta el permiso.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <h3 class="why-title">Socios comprometidos</h3>
+            <p class="why-desc">Participación y supervisión personal de los socios en cada trabajo.</p>
+          </div>
+        </div>
+
+        <!-- Banner de Contacto Directo de Socios -->
+        <div class="partners-box">
+          <div class="partners-text">
+            <h3>Atención directa de nuestros socios</h3>
+            <p>Hablemos directamente sobre los requerimientos de tu proyecto</p>
+          </div>
+          <div class="partners-list">
+            <div class="partner-item">
+              <span class="partner-name">Lucía Acuña</span>
+              <a href="mailto:lucia.acuna@alveus.cl" class="partner-link">lucia.acuna@alveus.cl</a>
+              <a href="tel:+56995800837" class="partner-link">+56 9 9580 0837</a>
+            </div>
+            <div class="partner-item">
+              <span class="partner-name">Iván Fuentes</span>
+              <a href="mailto:ivan.fuentes@alveus.cl" class="partner-link">ivan.fuentes@alveus.cl</a>
+              <a href="tel:+56995180076" class="partner-link">+56 9 9518 0076</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. CONTACTO -->
+    <section id="contacto">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Atención Directa</span>
+          <h2 class="section-title">Contáctanos</h2>
+          <p class="section-subtitle">Conversemos sobre los requerimientos y desafíos técnicos de tu proyecto.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Columna Izquierda: Información -->
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div>
+                <span class="contact-label">Correos Electrónicos</span>
+                <div><a href="mailto:lucia.acuna@alveus.cl" class="contact-val">lucia.acuna@alveus.cl</a></div>
+                <div><a href="mailto:ivan.fuentes@alveus.cl" class="contact-val">ivan.fuentes@alveus.cl</a></div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <div>
+                <span class="contact-label">Teléfonos / WhatsApp</span>
+                <div><a href="https://wa.me/56995800837" target="_blank" rel="noopener noreferrer" class="contact-val">+56 9 9580 0837</a></div>
+                <div><a href="https://wa.me/56995180076" target="_blank" rel="noopener noreferrer" class="contact-val">+56 9 9518 0076</a></div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div>
+                <span class="contact-label">Cobertura</span>
+                <div class="contact-val">Proyectos a nivel nacional e internacional</div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <div>
+                <span class="contact-label">Sitio Web</span>
+                <div><a href="https://alveus.cl" class="contact-val">alveus.cl</a></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna Derecha: Formulario -->
+          <div class="contact-form">
+            <form action="https://formspree.io/f/tu-id" method="POST">
+              <div class="form-group">
+                <label for="nombre" class="form-label">Nombre Completo</label>
+                <input type="text" id="nombre" name="nombre" class="form-input" required placeholder="Ej: Marcela Gómez">
+              </div>
+
+              <div class="form-group">
+                <label for="empresa" class="form-label">Empresa o Institución</label>
+                <input type="text" id="empresa" name="empresa" class="form-input" placeholder="Ej: Minera / Empresa de Energía">
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Correo Electrónico</label>
+                <input type="email" id="email" name="_replyto" class="form-input" required placeholder="nombre@empresa.cl">
+              </div>
+
+              <div class="form-group">
+                <label for="telefono" class="form-label">Teléfono de Contacto</label>
+                <input type="tel" id="telefono" name="telefono" class="form-input" placeholder="+56 9 ...">
+              </div>
+
+              <div class="form-group">
+                <label for="mensaje" class="form-label">Mensaje o Requerimiento</label>
+                <textarea id="mensaje" name="mensaje" class="form-textarea" required placeholder="Describe los estudios hidrológicos, hidrogeológicos, hidráulicos o permisos requeridos..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Consulta</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 7. FOOTER -->
+  <footer>
+    <div class="container footer-content">
+      <p>&copy; 2026 Alveus &bull; alveus.cl &bull; Todos los derechos reservados.</p>
+      <div>Hidrología | Hidrogeología | Hidráulica | Permisos Sectoriales</div>
+    </div>
+  </footer>
+
+  <!-- Botón Flotante WhatsApp -->
+  <a href="https://wa.me/56995800837?text=Hola,%20quisiera%20solicitar%20información%20sobre%20los%20servicios%20de%20Alveus" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
+    <span class="whatsapp-tooltip">¿Consultas técnicas? Conversemos</span>
+    <svg width="30" height="30" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.043-1.076-.081-.24-.078-.548-.198-.946-.37-.899-.387-1.48-1.282-1.525-1.343-.045-.06-1.042-1.388-1.042-2.646 0-1.258.659-1.878.893-2.133.234-.255.512-.319.683-.319.171 0 .342.002.491.01.159.009.373-.06.583.444.217.521.738 1.802.803 1.934.065.132.109.288.022.463-.087.175-.131.284-.26.435-.129.151-.271.338-.387.453-.129.129-.264.269-.114.526.151.257.671 1.109 1.442 1.796.994.885 1.832 1.159 2.089 1.288.257.129.407.114.557-.06.15-.175.642-.747.813-1.004.171-.257.342-.214.577-.129.235.086 1.492.704 1.749.832.257.129.428.193.491.302.064.108.064.629-.08 1.034z"/>
+    </svg>
+  </a>
+
+  <!-- Script Interactivo -->
+  <script>
+    // Menú móvil hamburguesa
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburgerBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Cerrar menú al hacer clic en un enlace
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
