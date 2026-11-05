@@ -862,7 +862,7 @@
           <p class="section-subtitle">Ingeniería y modelación avanzada al servicio de proyectos de alta exigencia técnica y regulatoria.</p>
         </div>
 
-        <div class="services-grid">
+    <div class="services-grid">
           <!-- 01 Hidrología -->
           <div class="service-card">
             <span class="service-num">01</span>
@@ -875,24 +875,37 @@
             <p class="service-desc">Caudales de diseño, análisis de crecidas, balances hídricos y estudios de disponibilidad, incluyendo escenarios de cambio climático.</p>
           </div>
 
-          <!-- 02 Hidrogeología -->
+          <!-- 02 Hidrogeología (Actualizado) -->
           <div class="service-card">
             <span class="service-num">02</span>
             <div class="service-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M3 6h18M3 12h18M3 18h18"/>
-              </svg>
+              <!-- SVG Simplificado: Superficie con plantas, capa de agua y filtraciones (acuífero) -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			  <!-- Línea de superficie / suelo -->
+			  <line x1="3" y1="5" x2="21" y2="5" />
+			  <!-- Nivel freático / contacto (trazo sutil) -->
+			  <line x1="3" y1="9" x2="21" y2="9" stroke-dasharray="2 3" />
+			  <!-- Líneas de flujo subsuperficial / acuífero -->
+			  <path d="M3 14c3.5 0 4.5-1.5 8-1.5s4.5 1.5 8 1.5" />
+			  <path d="M5 19c3.5 0 4.5-1.5 8-1.5s4.5 1.5 8 1.5" />
+			</svg>
             </div>
             <h3 class="service-title">Hidrogeología</h3>
             <p class="service-desc">Caracterización de acuíferos, pruebas de bombeo, modelos numéricos de flujo y transporte, estudios de vulnerabilidad de acuífero y evaluación de drenaje y desagüe en faenas.</p>
           </div>
 
-          <!-- 03 Hidráulica -->
+          <!-- 03 Hidráulica (Actualizado) -->
           <div class="service-card">
             <span class="service-num">03</span>
             <div class="service-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M2 12h20M2 12l5-5m-5 5 5 5"/>
+              <!-- SVG Simplificado: Silueta sinuosa de un río o canal fluyendo -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <!-- Margen/Flujo izquierdo -->
+                <path d="M7 2c2 3-1 5 1 8s4 2 2 6-3 5-1 6" />
+                <!-- Margen/Flujo derecho -->
+                <path d="M15 2c3 3 0 5 2 8s3 2 1 6-2 5 0 6" />
+                <!-- Línea interna de corriente para dar dinamismo -->
+                <path d="M11 4c1.5 2 0 4.5 1 6.5s1.5 2 .5 4" stroke-dasharray="1 3"/>
               </svg>
             </div>
             <h3 class="service-title">Hidráulica</h3>
